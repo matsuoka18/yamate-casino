@@ -154,6 +154,7 @@
         <pre>YAMATE
      <span>casino</span>
    </pre></div-->
+   <div class="save" onclick="save()">やめる</div>
 <script>
     function check(){
         alert(document.getElementById('check').getBoundingClientRect().bottom);
@@ -169,6 +170,17 @@
     }
     li{
         list-style-type: none;
+    }
+    .save{
+    Position:relative;top:15vw;left:-10vw;
+    Font-size:20px;
+    Font-family:monospace;
+    Font-weight:600;
+    Background-color:red;
+    Padding:10px;
+    Text-align:center;
+    Border-radius:10px;
+    Box-shadow: 0 0 5px gray;
     }
 .k1{
   background-color: ;
@@ -753,6 +765,9 @@ dd.addEventListener('click',ddd);
 upp.addEventListener('click',up);
 downn.addEventListener('click',down);
 
+function save(){
+location.href = "save.html";
+}
 function dd1(){
   timee++;
   crem1 = crem;

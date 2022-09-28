@@ -9,8 +9,10 @@
 <input type="text" id="username" value="" placeholder="ユーザー名を入力">
      <p>パスワード</p>
      <input type="password" id="pass1" value="" placeholder="パスワードを入力">
+<div id="t">
      <div  class="div1"onclick="send()">ログインしてプレイ</div>
-<p id="h"></p>
+     <div  class="div1"onclick="play()">ログインせずにプレイ</div>
+　　　</div>
      <style>
         body{
             padding:0;
@@ -52,7 +54,13 @@ box-shadow: 0 0  5px gray;
 }
      </style>
      <script>
+function play(){
+location.href = "スロット 2.html";
+}
      function send(){
+if(typeof r !== 'undefined'){
+ r.remove();
+}
      fetch('https://script.google.com/macros/s/AKfycbzTWhb59EChVtXXu3VcpsXUUinB76DCHxh_4kRZ1KMM6JYEWGdnH1mIKBsDdwWImd8AWg/exec', {
                   method: "GET",
                   mode: "cors"
@@ -103,6 +111,11 @@ return;
 }
 }
 alert("ユーザーを発見できませんでした")
+t.insertAdjacentHTML('afterbegin','<div id="r"class="div1" onclick="make()">ユーザーを作る</div>')
+r = document.getElementById("r");
+}
+function make(){
+location.href="チップデータ.html"
 }
      </script>
 </body>
