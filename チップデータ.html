@@ -72,50 +72,10 @@ box-shadow: 0 0  5px gray;
         pass2 =  document.getElementById("pass2").value;
         Us = username.length;
         Ps = pass1.length;
-        Ps2 = pass2.length;
-        if(Us == 0 || Ps == 0 || Ps2 == 0){
+        if(Us == 0 && Ps == 0){
         alert("記入してください");
         return;
         }
-fetch('https://script.google.com/macros/s/AKfycbzTWhb59EChVtXXu3VcpsXUUinB76DCHxh_4kRZ1KMM6JYEWGdnH1mIKBsDdwWImd8AWg/exec', {
-                  method: "GET",
-                  mode: "cors"
-                })
-                .then(response => {
-                  if (response.ok) {
-                    
-                    return response.json();
-                    
-                  }
-                  // 404 や 500 ステータスならここに到達する
-                  throw new Error('Network response was not ok.')
-               
-                })
-                .then(resJson => {
-resJson = JSON.stringify(resJson);
-                 
-check(resJson);
-              })
-                .catch(error => {
-                  // ネットワークエラーの場合はここに到達する
-                  console.error(error);
-                })
-                }
-function check(resJson){
-text1 = document.getElementById("username").value;
-text2 = document.getElementById("pass1").value;
-last = JSON.parse(resJson).last[0];
-for(var a = 0; a < last; a++){
-name = JSON.parse(resJson).name[a];
-if(name == text1){
-alert("すでに同じユーザーネームが使われています");
-document.getElementById("username").value = "";
-document.getElementById("pass1").value = "";
-document.getElementById("pass2").value = "";
-return;
-}
-}
-
         tip = 30;
         
         url="https://script.google.com/macros/s/AKfycbzTWhb59EChVtXXu3VcpsXUUinB76DCHxh_4kRZ1KMM6JYEWGdnH1mIKBsDdwWImd8AWg/exec";
